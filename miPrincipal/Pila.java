@@ -9,6 +9,18 @@ public class Pila<T>{
         cabeza = null;
         tamanio = 0;
     }
+    public int buscar(T elemento) {
+        Nodo<T> actual = cabeza;
+        int posicion = 0;   
+        while (actual != null) {    
+            if (actual.getValor().equals(elemento)) {
+                return posicion; 
+            }
+            actual = actual.getSiguiente();
+            posicion++; 
+        }
+        return -1;
+    }
     //Devuelde el total de elementos d ela pila
     public int getTamanio(){
         return tamanio;
